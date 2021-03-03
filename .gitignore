@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!READ.ME
+!main.tex
+!main.pdf
+!ref.bib
+# etc...
