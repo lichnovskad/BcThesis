@@ -1,10 +1,11 @@
-# Ignore everything
-*
+.bcf
+.log
+.toc
+.lot
+.xml
+.gz
+.lof
+.bbl
+.aux
 
-# But not these files...
-!.gitignore
-!READ.ME
-!main.tex
-!main.pdf
-!ref.bib
 # etc...
