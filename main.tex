@@ -17,7 +17,7 @@
 
 \usepackage{pdfpages}
 \usepackage[backend=bibtex]{biblatex}
-\addbibresource{ref.bib}
+\addbibresource{ref}
 
 \makeatletter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
@@ -377,15 +377,18 @@ Díky znalosti rozměrů panoramatu si můžeme vytvořit konečný souřadný s
 Jak bylo výše uvedeno, u dlouhých panoramat s jakými pracujeme my, je třeba použít affiní, či podobnostní transformaci, nebot při součinu projektivních transformací dochází ke stále větší a větší chybě, a při více než 5-7 snímcích ani nelze žádné panorama vytvořit.
 \chapter{Experimenty}
 \pagestyle{headings}
-\section{Opakovatelnost(repeatability) a loc error}
-Opakovatelnost \cite{repeat}
-\begin{figure}[h]
+\section{Opakovatelnost(repeatability)}
+
+\begin{figure}
   \includegraphics[width=\linewidth]{Images/aaa.png}
   \caption{Ilustrace principu opakovatelnosti}
   \label{fig:repeatabil}
 \end{figure}
-Repeatability rate definujeme jako počet stejných bodů vyskytujících se na obou snímcích vzhledem k celkovém počtu detekovaných bodů. Z detekovaných bodů vybíráme pouze ty, které jsou součástí scény vyskytujících se na obou snímcích.
 
+Opakovatelnost je podle \cite{repeat} definována jako schopnost detekovat příznaky nezávisle
+na změnách ve snímacích podmínkách, jako je třeba posun kamery nebo zhoršení kvality obrazu.
+
+rep rate jako počet stejných bodů vyskytujících se na obou snímcích vzhledem k celkovém počtu detekovaných bodů. Z detekovaných bodů vybíráme pouze ty, které jsou součástí scény vyskytujících se na obou snímcích.
 
 Je důležité vzít v úvahu nepřesnost detekce. Korespondující bod se nebude nacházet přesně daném místě určeném maticí, ale v jeho eps
 -okolí. eps-reapeatabilitu definujeme jako:
@@ -394,6 +397,8 @@ Je důležité vzít v úvahu nepřesnost detekce. Korespondující bod se nebud
 Počet detekovaných bodů ve společné části snímku nebude stejný, proto vybereme menší z nich, abychom zajistili existenci bodu z eps
 -reapeatability. Repeatability rate je tedy definováno následovně: 
 $$ri(eps)=abs(Ri(eps))/min(ni,j)$$
+
+
 \section{Vliv rozmazání na registraci}
 Pro sledování vlivu rozmazání na kvalitu registrace použijeme dvojice sousedících snímků, které uměle rozmažeme aplikací motion-blur filtru náhodné orientace v rozsahu <0,190> a pevně zvolené délky v rozsahu <1,50>, kdy je postupně přidávana po inkrementech 5(pixelů?). Z jedné dvojice tak získáme 11 (12 s originálními) párů rozmazaných snímků. U nich pak najdeme příznaky, namatchujeme je a odhadneme homografní matici. Pro E v Eps-repeatabilite dosadíme 10. Takte získáme repeatability rate.
 
