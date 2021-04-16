@@ -1,0 +1,20 @@
+# file endings
+*.bcf
+*.log
+*.toc
+*.lot
+*.xml
+*.gz
+*.lof
+*.bbl
+*.aux
+*.blg
+*.bib
+
+#vyjimky
+!ref.bib
+
+
+#folders
+/.ipynb_checkpoints
+# etc...
